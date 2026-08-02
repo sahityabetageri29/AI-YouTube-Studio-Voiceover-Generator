@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* Global Font & Text Defaults */
+* {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #e2e8f0;
+}
+
+/* App Background */
+.stApp {
+    background: radial-gradient(circle at 15% 15%, #1e1b4b 0%, #0f172a 45%, #090d16 100%);
+    color: #f8fafc !important;
+}
+
+/* Base Paragraph & List text */
+p, span, li, label, div, small, strong {
+    color: #e2e8f0 !important;
+}
+
+/* Headings with Vibrant Gradient Accent */
+h1, .stMarkdown h1 {
+    background: linear-gradient(135deg, #FF4D4D 0%, #F9CB28 50%, #FF007A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+}
+
+h2, h3, h4, h5, h6, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4 {
+    color: #f8fafc !important;
+    font-weight: 700 !important;
+}
+
+/* Sidebar Styling & Text */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0f172a 0%, #1e1035 100%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-testid="stSidebar"] * {
+    color: #e2e8f0 !important;
+}
+
+/* Widget Labels (Text input, selectbox, radio, slider labels) */
+label, [data-testid="stWidgetLabel"], [data-testid="stWidgetLabel"] p, [data-testid="stMarkdownContainer"] p {
+    color: #cbd5e1 !important;
+    font-weight: 600 !important;
+}
+
+/* Radio Button Labels & Options */
+[data-testid="stRadio"] label, [data-testid="stRadio"] div[role="radiogroup"] p, [data-testid="stRadio"] span {
+    color: #f1f5f9 !important;
+}
+
+/* Inputs, Textareas, Selectboxes */
+.stTextInput > div > div > input, .stSelectbox > div > div, .stTextArea textarea, input, textarea {
+    background: rgba(15, 23, 42, 0.8) !important;
+    color: #f8fafc !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 10px !important;
+}
+
+.stTextInput > div > div > input:focus, .stTextArea textarea:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Selectbox Dropdown Menu Options */
+[data-baseweb="menu"] {
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-baseweb="menu"] [role="option"] * {
+    color: #f8fafc !important;
+}
+
+[data-baseweb="menu"] [role="option"]:hover {
+    background-color: #334155 !important;
+}
+
+/* Glassmorphism Metric Cards */
+[data-testid="stMetric"] {
+    background: rgba(30, 41, 59, 0.6) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 18px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: rgba(255, 77, 77, 0.4) !important;
+    box-shadow: 0 12px 40px 0 rgba(255, 77, 77, 0.25) !important;
+}
+
+[data-testid="stMetricValue"], [data-testid="stMetricValue"] * {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: #38bdf8 !important;
+}
+
+[data-testid="stMetricLabel"], [data-testid="stMetricLabel"] * {
+    font-size: 0.9rem !important;
+    color: #94a3b8 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Custom Cards */
+.custom-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.custom-card:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+}
+
+.custom-card p {
+    color: #94a3b8 !important;
+}
+
+/* Animated Gradient Header Badge */
+.animated-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #ff007a, #7928ca, #ff007a);
+    background-size: 200% auto;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: shine 3s linear infinite;
+    box-shadow: 0 4px 15px rgba(255, 0, 122, 0.4);
+}
+
+@keyframes shine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Buttons */
+.stButton > button {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stButton > button * {
+    color: #ffffff !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5) !important;
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%) !important;
+}
+
+.stDownloadButton > button {
+    background: rgba(30, 41, 59, 0.8) !important;
+    color: #38bdf8 !important;
+    border: 1px solid rgba(56, 189, 248, 0.3) !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.stDownloadButton > button * {
+    color: #38bdf8 !important;
+}
+
+.stDownloadButton > button:hover {
+    background: rgba(56, 189, 248, 0.15) !important;
+    border-color: #38bdf8 !important;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25) !important;
+}
+
+/* Expander Headers & Content */
+[data-testid="stExpander"] {
+    background: rgba(30, 41, 59, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    margin-bottom: 10px;
+}
+
+[data-testid="stExpander"] summary, [data-testid="stExpander"] summary * {
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+}
+
+/* Alert Boxes (Info, Success, Warning, Error) */
+[data-testid="stAlert"] {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 14px !important;
+}
+
+[data-testid="stAlert"] * {
+    color: #f1f5f9 !important;
+}
+
+/* Code Blocks */
+code, pre {
+    color: #38bdf8 !important;
+    background: rgba(15, 23, 42, 0.9) !important;
+    border-radius: 6px;
+    padding: 2px 6px;
+}
+
+/* Tables & Dataframes */
+table, th, td {
+    color: #f8fafc !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Audio Player */
+audio {
+    border-radius: 30px;
+    width: 100%;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* Pulsing Audio Graphic */
+.sound-wave {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 30px;
+    margin: 10px 0;
+}
+.sound-bar {
+    width: 4px;
+    height: 100%;
+    background: #6366f1;
+    border-radius: 2px;
+    animation: wave 1.2s infinite ease-in-out;
+}
+.sound-bar:nth-child(2) { animation-delay: 0.2s; background: #ec4899; }
+.sound-bar:nth-child(3) { animation-delay: 0.4s; background: #3b82f6; }
+.sound-bar:nth-child(4) { animation-delay: 0.6s; background: #10b981; }
+.sound-bar:nth-child(5) { animation-delay: 0.8s; background: #f59e0b; }
+
+@keyframes wave {
+    0%, 100% { height: 6px; }
+    50% { height: 28px; }
+}
