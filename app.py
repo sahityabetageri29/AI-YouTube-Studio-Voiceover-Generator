@@ -66,9 +66,9 @@ api_key = os.getenv("GOOGLE_API_KEY")
 if api_key:
     genai.configure(api_key=api_key)
     try:
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = genai.GenerativeModel("gemini-2.0-flash")
     except Exception:
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-flash-latest")
 else:
     model = None
 
@@ -187,7 +187,7 @@ if page == "🏠 Home":
         st.metric("📚 Total Words", f"{total_words:,}")
 
     with col3:
-        st.metric("⚡ Engine", "Gemini 2.5 Flash")
+        st.metric("⚡ Engine", "Gemini 2.0 Flash")
 
     with col4:
         st.metric("🔊 Audio Engine", "gTTS Studio")
@@ -532,7 +532,11 @@ Make the script engaging, direct, and structured for maximum viewer retention.
 """
             try:
                 with st.spinner("🤖 Gemini AI is crafting your masterpiece..."):
-                    response = model.generate_content(prompt)
+                    try:
+                        response = model.generate_content(prompt)
+                    except Exception:
+                        fallback_model = genai.GenerativeModel("gemini-flash-latest")
+                        response = fallback_model.generate_content(prompt)
                     output = response.text
 
                 st.session_state.last_generated_text = output
@@ -812,4 +816,3 @@ elif page == "⚙️ Settings":
     st.divider()
 
     st.success("✅ Settings Saved for this Session")
-    
